@@ -1,0 +1,37 @@
+<p>
+  {{pageTitle}}
+
+</p>
+<input type='text' [(ngModel)]='filterPatt' />
+<table class="table table-responsive" *ngIf="products?.length">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Image</th>
+      <th>Nom</th>
+      <th>Note ({{ noteavg | number : '1.2-2'}})</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products | productFilter:filterPatt">
+      <td>{{product.id}}</td>
+      <td *ngIf="product.images.length > 0">
+        <button (click)='imgBtnPrev(product)' class="btn btn-default btn-xs">&lt;</button>
+        <img [src]="product.images[product.curImgIdx]" width="80px" /> 
+        <button (click)='imgBtnNext(product)' class="btn btn-default btn-xs">&gt;</button>
+      </td>
+      <td *ngIf="product.images.length == 0">
+        <img src="http://www.enterrasolutions.com/media/images/2013/04/6a00d8341c4ebd53ef01901b82eb97970b-pi.jpg" width="80px" />
+      </td>
+      <td>{{product.name}}</td>
+      <td>
+          <app-star [prod]='product'
+              (ratingClicked)='onRatingClicked($event)' >
+          </app-star>
+      </td>
+    </tr>
+
+  </tbody>
+
+</table>

@@ -1,0 +1,12 @@
+<div>
+<span class="glyphicon glyphicon-star orange" *ngIf="prod.note > 0" (click)='onClickStar(1)'></span>
+<span class="glyphicon glyphicon-star-empty orange" *ngIf="prod.note == 0" (click)='onClickStar(1)'></span>
+<span class="glyphicon glyphicon-star orange" *ngIf="prod.note > 1" (click)='onClickStar(2)'></span>
+<span class="glyphicon glyphicon-star-empty orange" *ngIf="prod.note <= 1" (click)='onClickStar(2)'></span>
+<span class="glyphicon glyphicon-star orange" *ngIf="prod.note > 2" (click)='onClickStar(3)'></span>
+<span class="glyphicon glyphicon-star-empty orange" *ngIf="prod.note <= 2" (click)='onClickStar(3)'></span>
+<span class="glyphicon glyphicon-star orange" *ngIf="prod.note > 3" (click)='onClickStar(4)'></span>
+<span class="glyphicon glyphicon-star-empty orange" *ngIf="prod.note <= 3" (click)='onClickStar(4)'></span>
+<span class="glyphicon glyphicon-star orange" *ngIf="prod.note > 4" (click)='onClickStar(5)'></span>
+<span class="glyphicon glyphicon-star-empty orange" *ngIf="prod.note <= 4" (click)='onClickStar(5)'></span>
+</div>
